@@ -1,15 +1,16 @@
 # GhostWire
 
-GhostWire é um projeto que implementa um sistema de redirecionamento de tráfego web baseado em Docker, Feito para agilizar a montagem de uma Framework C2.
+GhostWire é um projeto para tornar mais eficiente a instalação de uma arquitetura para pentest, feito para ser instalado rapidamente em qualquer lugar.
 
 ## Descrição
 
-Este projeto utiliza Docker Compose para criar dois serviços:
+Este projeto utiliza Docker Compose para criar um ambiente de pentest:
 
-1. **c2_server**: Um servidor Apache que atua como ponto de entrada para o tráfego web.
-2. **c2**: Um serviço Generico que pode comportar qualquer framework de c2, Atualmente utilizando o Mestasploit.
+Feito para agilizar a configuração de um ambiente de pentest, consiste basicamente em um servidor apache2 e uma framework(C2)
+uma vez funcionando, estará configurado para redirecionar para a c2 apenas conexões com um cabeçalho especifico, qualquer outra conexão irá ser redirecionada
+para outra pagina, deixando mais seguro contra analises
 
-O servidor Apache usa o módulo mod_rewrite para redirecionar solicitações HTTP com base no agente do usuário (user-agent).
+
 
 ## Instalação e Uso
 
@@ -25,17 +26,17 @@ O servidor Apache usa o módulo mod_rewrite para redirecionar solicitações HTT
     cd ghostwire
     ```
 
-3. Execute o start.sh:
+3. Execute o `start.sh` para iniciar o ambiente:
 
     ```bash
     sudo ./start.sh
     ```
 
-4. Após a inicialização bem-sucedida, você pode acessar o servidor Apache em http://localhost.
+## Tmux
+
+O projeto atualmente utiliza tmux como terminal para interagir com a c2, se atente de saber os atalhos para não ficar perdido.
+
 
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues para relatar problemas ou sugerir melhorias.
-
-
-
