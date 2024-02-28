@@ -1,7 +1,6 @@
 # GhostWire
 
-GhostWire é um projeto para tornar mais eficiente a instalação de uma arquitetura para pentest, feito para ser instalado rapidamente em qualquer lugar.
-
+GhostWire é um projeto de C2 Redirector feito em docker para tornar mais eficiente a instalação de uma arquitetura para pentest.
 ## Descrição
 
 Este projeto utiliza Docker Compose para criar um ambiente de pentest:
