@@ -1,4 +1,11 @@
 RewriteEngine On
-RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+
+# Regras para redirecionamento, quando as condições são verdadeiras ele executa as regras:
+RewriteCond %{REQUEST_URI} ^/(specialz)/?$
+
+RewriteCond %{HTTP_USER_AGENT} "Special" [NC]
+RewriteRule ^.*$ http://c2:8989%{REQUEST_URI} [P,L]
+
+# Exessão da regra, qualquer coisa que não condiz com as regras executa isso:
 RewriteRule ^.*$ http://www.google.com/? [L,R=302]
-RewriteRule ^.*$ http://c2:8989/? [P,L]
+ 
